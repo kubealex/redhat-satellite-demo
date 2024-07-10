@@ -1,0 +1,6 @@
+lab_domain: demo.labs
+lab_network: 192.168.254.0/24
+rhel8_image_path: /path/to/rhel8.qcow2
+rhel9_image_path: /path/to/rhel9.qcow2
+rhsm_user: 
+rhsm_password: 

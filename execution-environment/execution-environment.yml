@@ -1,0 +1,27 @@
+---
+version: 3
+
+images:
+  base_image:
+    name: quay.io/centos/centos:stream9
+
+dependencies:
+  ansible_core:
+    package_pip: ansible-core
+  ansible_runner:
+    package_pip: ansible-runner
+  galaxy: |
+    collections:
+      - ansible.posix    
+      - ansible.utils
+      - community.general
+
+    roles:
+      - name: role-satellite-setup
+        src: https://github.com/kubealex/role-satellite-setup
+  python: |
+    firewall
+    netaddr
+additional_build_steps:
+  prepend_base:
+    - RUN dnf install git sshpass -y
