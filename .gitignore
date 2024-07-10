@@ -1,0 +1,9 @@
+ansible-navigator.log
+
+terraform/.terraform/**
+terraform/terraform.*
+terraform/.terraform*
+
+execution-environment/context
+
+test_vars.yml
