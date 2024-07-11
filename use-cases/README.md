@@ -17,9 +17,15 @@
 > You can then allocate the subscriptions you want to associate to the freshly created manifest by using the [Subscription Allocation page](https://access.redhat.com/management/subscription_allocations)
 >  
 > Then you can export the freshly created manifest withing the [manifest page in Cloud Console](https://console.redhat.com/subscriptions/manifests).
-> 
-> 
-> 
-> 
 >  </details>
-> 
+>
+> <details>
+>   <summary><i>Upload manifest to Red Hat Satellite</i></summary>
+> - In the Satellite web UI, ensure the context is set to the organization you want to use.
+> - In the Satellite web UI, navigate to Content > Subscriptions and click Manage Manifest.
+> - In the Manage Manifest window, click Choose File.
+> - Navigate to the location that contains the Red Hat subscription manifest file, then click Open.
+> - Verify that in the "Content > Subscriptions" menu you see listed the subscriptions you allocated before
+>  </details>
+
+- [Configuring and synchronizing repositories](./config-sync-repos/)
