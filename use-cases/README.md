@@ -6,11 +6,11 @@
 > <details>
 >   <summary><i>Create the manifest and export it</i></summary>
 >   
-> - From the [Hybrid Cloud Console](https://console.redhat.com) home page, click Services > Subscriptions and Spend > Manifests.
-> - From the Manifests page, click Create new manifest.
-> - In the Name field, enter a unique name for the manifest.
-> - From the Type list, select the application type and version number that corresponds to your Red Hat Satellite Server.
-> - Click Create.
+> - From the [Hybrid Cloud Console](https://console.redhat.com) home page, click Services > Subscriptions and Spend > Manifests. 
+> - From the Manifests page, click Create new manifest. 
+> - In the Name field, enter a unique name for the manifest. 
+> - From the Type list, select the application type and version number that corresponds to your Red Hat Satellite Server. 
+> - Click Create. 
 >  
 > More details in [the documentation](https://docs.redhat.com/en/documentation/subscription_central/1-latest/html/creating_and_managing_manifests_for_a_connected_satellite_server/proc-creating-manifest-satellite-connected#proc-creating-manifest-satellite-connected)
 > 
@@ -21,11 +21,12 @@
 >
 > <details>
 >   <summary><i>Upload manifest to Red Hat Satellite</i></summary>
-> - In the Satellite web UI, ensure the context is set to the organization you want to use.
-> - In the Satellite web UI, navigate to Content > Subscriptions and click Manage Manifest.
-> - In the Manage Manifest window, click Choose File.
-> - Navigate to the location that contains the Red Hat subscription manifest file, then click Open.
-> - Verify that in the "Content > Subscriptions" menu you see listed the subscriptions you allocated before
+>
+> - In the Satellite web UI, ensure the context is set to the organization you want to use. 
+> - In the Satellite web UI, navigate to Content > Subscriptions and click Manage Manifest. 
+> - In the Manage Manifest window, click Choose File. 
+> - Navigate to the location that contains the Red Hat subscription manifest file, then click Open. 
+> - Verify that in the "Content > Subscriptions" menu you see listed the subscriptions you allocated before 
 >  </details>
 
 - [Configuring and synchronizing repositories](./config-sync-repos/)
