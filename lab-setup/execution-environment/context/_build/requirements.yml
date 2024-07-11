@@ -1,0 +1,8 @@
+collections:
+  - ansible.posix    
+  - ansible.utils
+  - community.general
+
+roles:
+  - name: role-satellite-setup
+    src: https://github.com/kubealex/role-satellite-setup

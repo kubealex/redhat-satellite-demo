@@ -1,5 +1,0 @@
-#[vm_host]
-#HOST_IP_FQDN ansible_user=HOST_USER ansible_password=HOST_PASSWORD
-
-[vm_host]
-100.92.163.70 ansible_user=alerossi ansible_password="!!2021Redhat!!"
