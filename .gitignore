@@ -1,9 +1,9 @@
-ansible-navigator.log
+lab-setup/ansible-navigator.log
 
-terraform/.terraform/**
-terraform/terraform.*
-terraform/.terraform*
+lab-setup/terraform/.terraform/**
+lab-setup/terraform/terraform.*
+lab-setup/terraform/.terraform*
 
-execution-environment/context
+lab-setup/execution-environment/context
 
-test_vars.yml
+lab-setup/test_vars.yml
