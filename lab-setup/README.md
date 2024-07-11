@@ -1,8 +1,4 @@
-# redhat-satellite-demo
-
-This repo helps in the creation of a Red Hat Satellite environment to showcase or test it using KVM. 
-
-## Lab setup
+# Lab setup
 
 The setup is performed using KVM, Ansible and Terraform to provide an isolated and easily maintainable environment with Satellite on it with a minimal set of configurations.
 
@@ -15,13 +11,25 @@ The lab will take care of:
 - Provisioning KVM instances for 1xRHEL8 and 1xRHEL9 clients
 - Configure and install Satellite following documentation best practices
 
-### Requirements
+## Index
 
-#### Red Hat Account and Satellite subscription
+- [Requirements](#requirements)
+  * [Red Hat Account and Satellite subscription](#red-hat-account-and-satellite-subscription)
+  * [Red Hat Enterprise Linux QCOW2 images](#red-hat-enterprise-linux-qcow2-images)
+  * [Execution Environment](#execution-environment)
+  * [Inventory](#inventory)
+  * [Variables](#variables)
+  * [Running the setup](#running-the-setup)
+  * [Destroying the lab](#destroying-the-lab)
+
+
+## Requirements
+
+### Red Hat Account and Satellite subscription
 
 A Red Hat Account and valid subscriptions for Red Hat Satellite are required.
 
-#### Red Hat Enterprise Linux QCOW2 images
+### Red Hat Enterprise Linux QCOW2 images
 
 To provision the KVM instances, a RHEL8 and RHEL9 QCOW2 image are needed.
 
@@ -31,7 +39,7 @@ The only relevant setting to flag is *Virtualization - Guest image (.qcow2)* in 
 
 No customization is needed, all required configurations will be performed using Ansible.
 
-#### Execution Environment
+### Execution Environment
 
 To build the execution environment, we will use [ansible-builder](https://ansible.readthedocs.io/projects/builder/en/latest/) and to run the automation [ansible-navigator](https://ansible.readthedocs.io/projects/navigator/) is needed.
 
@@ -56,7 +64,7 @@ ansible-builder build -t satellite-demo-ee
 
 It will create a container image with all necessary tools to run the automation.
 
-### Inventory
+ ### Inventory
 
 The [inventory](./inventory) comes with no predefined hosts. 
 The host group **vm_host** represents the machine where KVM is running. A user with sudo privilege is required for DNS configuration. Assuming an IP like 1.2.3.4 and a user called **ansible** with password **redhat** the inventory will look like:
