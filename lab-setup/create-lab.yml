@@ -3,6 +3,8 @@
   hosts: vm_host
   vars_files:
     - lab_vars.yml
+  vars:
+    terraform_url: https://releases.hashicorp.com/terraform/1.8.1/terraform_1.8.1_linux_amd64.zip
   tasks:
     - name: Satellite Demo Lab | Fail if path to RHEL image is not set
       ansible.builtin.fail:
@@ -13,6 +15,19 @@
       ansible.builtin.fail:
         msg: "You need to specify your RHSM credentials in the lab_vars.yml file"
       when: rhsm_user is not defined or rhsm_user | string == "None" or rhsm_password is not defined or rhsm_password | string == "None"
+
+    - name: Satellite Demo Lab | Check if Terraform is installed # noqa no-changed-when
+      ansible.builtin.command: which terraform
+      ignore_errors: true
+      register: terraform_check
+
+    - name: Satellite Demo Lab | Ensure Terraform is present
+      when: terraform_check.rc != 0
+      ansible.builtin.unarchive:
+        src: "{{ terraform_url }}"
+        dest: /usr/bin/
+        mode: "0755"
+        remote_src: true
 
     - name: Satellite Demo Lab | Ensure needed resources are in place
       community.general.terraform:
