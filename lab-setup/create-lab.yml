@@ -68,7 +68,7 @@
         name: systemd-resolved
         state: restarted
 
-    - name: Satellite Demo Lab | Add host to inventory
+    - name: Satellite Demo Lab | Add Satellite host to inventory
       ansible.builtin.add_host:
         hostname: "satellite.{{ lab_domain | default('demo.labs', true) }}" # noqa yaml[line-length]
         ansible_password: "redhat"
