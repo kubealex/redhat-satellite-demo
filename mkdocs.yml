@@ -1,0 +1,54 @@
+site_name: Red Hat Satellite demo
+repo_url: https://github.com/kubealex/redhat-satellite-demo/
+edit_uri: blob/main/
+site_author: Alessandro Rossi - Red Hat
+site_description: Documentation page for the Red Hat Satellite demo hosted on GitHub.
+theme: 
+  name: material
+  favicon: assets/logo.png
+  logo: assets/logo.png
+  font:
+    text: Red Hat Display  
+  features: 
+    - content.code.copy
+    - navigation.expand
+    - content.tooltips
+  palette: 
+    - scheme: default
+      primary: custom
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+    - scheme: slate
+      primary: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode  
+extra_css:
+  - stylesheets/extra.css          
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Lab setup: getting-started/lab-setup.md
+  - Use Cases:
+    - Configuring and synchronizing repositories: use-cases/config-sync-repos/README.md
+    - Managing content lifecycle - Lifecycle environments: use-cases/lifecycle-environments/README.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      base_path: !relative $config_dir
+  - pymdownx.superfences 
+  - attr_list
+  - pymdownx.emoji
+  - abbr
+plugins: 
+  - macros
+

@@ -2,7 +2,7 @@
 
 The setup is performed using KVM, Ansible and Terraform to provide an isolated and easily maintainable environment with Satellite on it with a minimal set of configurations.
 
-Self-containing setup for Ansible is granted using an [execution-environment](./execution-environment/) preconfigured with required collections and roles to provision the infrastructure (KVM network/Instance + Satellite setup)
+Self-containing setup for Ansible is granted using an [execution-environment]({{ config.repo_url }}{{ config.edit_uri }}/lab-setup/execution-environment/) preconfigured with required collections and roles to provision the infrastructure (KVM network/Instance + Satellite setup)
 
 The lab will take care of:
 
@@ -10,18 +10,6 @@ The lab will take care of:
 - Provisioning KVM instance for Satellite
 - Provisioning KVM instances for 1xRHEL8 and 1xRHEL9 clients
 - Configure and install Satellite following documentation best practices
-
-## Index
-
-- [Requirements](#requirements)
-  * [Red Hat Account and Satellite subscription](#red-hat-account-and-satellite-subscription)
-  * [Red Hat Enterprise Linux QCOW2 images](#red-hat-enterprise-linux-qcow2-images)
-  * [Execution Environment](#execution-environment)
-  * [Inventory](#inventory)
-  * [Variables](#variables)
-  * [Running the setup](#running-the-setup)
-  * [Destroying the lab](#destroying-the-lab)
-
 
 ## Requirements
 
@@ -66,7 +54,15 @@ It will create a container image with all necessary tools to run the automation.
 
 ### Inventory
 
-The [inventory](./inventory) comes with no predefined hosts. 
+The inventory comes with no predefined hosts:
+
+<details>
+  <summary>Example inventory</summary>
+  ```dockerfile
+  --8<-- "lab-setup/inventory"
+  ```
+</details>
+
 The host group **vm_host** represents the machine where KVM is running. A user with sudo privilege is required for DNS configuration. Assuming an IP like 1.2.3.4 and a user called **ansible** with password **redhat** the inventory will look like:
 
 ```bash
@@ -75,7 +71,6 @@ The host group **vm_host** represents the machine where KVM is running. A user w
 ```
 
 No additional entry is required, but it can be tailored to your needs based on the host configuration (if using SSH keys or other settings).
-
 
 ### Variables
 
